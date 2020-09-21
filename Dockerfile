@@ -1,7 +1,7 @@
-FROM node:8
+FROM node:12
 
 # Enable jessie-backports and install ffmpeg
-RUN echo 'deb http://deb.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/backports.list && \
+RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sources.list.d/backports.list && \
 	apt-get -qy update && \
 	apt-get -qy install ffmpeg && \
 	rm -rf /var/lib/apt/lists/*
